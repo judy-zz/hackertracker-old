@@ -34,4 +34,7 @@ HackerTracker::Application.configure do
 
   # Print deprecation notices to the stderr
   config.active_support.deprecation = :stderr
+
+  # Required default url option for devise to work.
+  config.action_mailer.default_url_options = { :host => 'hackertracker.dev' }
 end

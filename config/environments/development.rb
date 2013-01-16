@@ -37,5 +37,7 @@ HackerTracker::Application.configure do
 
   # NamedSeeds
   config.named_seeds.app_load_seed = true
-  
+
+  # Required default url option for devise to work.
+  config.action_mailer.default_url_options = { :host => 'hackertracker.dev' }
 end

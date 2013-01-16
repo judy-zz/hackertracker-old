@@ -3,6 +3,8 @@ source :rubygems
 gem 'rails', '~> 3.2.11'
 gem 'sqlite3'
 
+gem 'devise'
+
 group :assets do
   gem 'bootstrap-sass'
   gem 'coffee-rails'
