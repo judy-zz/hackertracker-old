@@ -1,5 +1,5 @@
 
-@Hackertracker =
+@HackerTracker =
   App:
     Controllers: {}
     Models: {}

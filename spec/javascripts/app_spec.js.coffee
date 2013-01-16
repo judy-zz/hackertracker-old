@@ -1,8 +1,8 @@
 #= require spec_helper
 
-describe 'Hackertracker.Application', ->
+describe 'HackerTracker.Application', ->
   
   it 'is defined', ->
-    expect(window).to.have.property 'Hackertracker'
+    expect(window).to.have.property 'HackerTracker'
 
 

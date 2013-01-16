@@ -4,7 +4,7 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Hackertracker::Application.load_tasks
+HackerTracker::Application.load_tasks
 
 namespace :test do
   task 'all' => [:default, 'konacha:run']
