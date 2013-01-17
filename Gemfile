@@ -1,9 +1,12 @@
 source :rubygems
 
 gem 'rails', '~> 3.2.11'
-gem 'sqlite3'
+gem 'pg'
 
 gem 'devise'
+gem 'omniauth'
+gem 'omniauth-github'
+gem 'haml'
 
 group :assets do
   gem 'bootstrap-sass'
@@ -19,6 +22,8 @@ group :development do
   gem 'puma'
   gem 'quiet_assets'
   gem 'meta_request', '0.2.1'
+  gem 'hpricot'
+  gem 'ruby_parser'
 end
 
 group :test do
