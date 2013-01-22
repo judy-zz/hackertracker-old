@@ -8,6 +8,8 @@
       %a.brand{:href => "#"} HackerTracker
       .nav-collapse
         %ul.nav.pull-right
+          - unless user_signed_in?
+            %li= link_to "Register", new_user_registration_path
           %li.dropdown
             %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
               %i.icon-user.icon-white
@@ -16,20 +18,20 @@
             %ul.dropdown-menu
               - if user_signed_in?
                 %li
-                  %a{:href => "#"}
+                  %a{:href => edit_user_registration_path}
                     %i.icon-user.icon-white
                     Profile
                 %li
-                  %a{:href => "#"}
+                  %a{:href => edit_user_registration_path}
                     %i.icon-cog.icon-white
                     Settings
                 %li.divider
                 %li
-                  %a{:href => "login.html"}
+                  %a{href: destroy_user_session_path, method: :delete}
                     %i.icon-off.icon-white
                     Logout
               - else
-                = form_for @user, :url => users_sign_in_path do |f|
+                = form_for @user, :url => session_path(@user) do |f|
                   %li
                     .input-prepend
                       %span.add-on

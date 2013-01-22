@@ -1,8 +1,6 @@
 HackerTracker::Application.routes.draw do
-  devise_for :users, :skip => :all
-
-  post "/users/sign_in"    => "sessions#create"
-  delete "/users/sign_out" => "sessions#destroy"
+  devise_for :users
+  match "/sekrit" => "application#sekrit"
 
   root :to => 'application#index'
 end
