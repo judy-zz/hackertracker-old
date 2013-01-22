@@ -1,3 +1,3 @@
 # HackerTracker
 
-## It tracks your hackers.
+It tracks your hackers.
