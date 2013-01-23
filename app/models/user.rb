@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  attr_accessible :email, :password, :password_confirmation, :remember_me
+  attr_accessible :username, :email, :password, :password_confirmation, :remember_me
 
   # THE WHOLE GODDAMN SHEBANG
   # devise :database_authenticatable, :registerable,
@@ -9,5 +9,12 @@ class User < ActiveRecord::Base
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+
+  validates :username,
+    presence: true,
+    uniqueness: true,
+    format: {
+      with: /^\w+$/i,
+      message: "can only contain letters and numbers."}
          
 end
