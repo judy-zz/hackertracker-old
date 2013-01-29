@@ -4,4 +4,55 @@
 .navbar-fixed-top {
   margin-bottom: 1em;
   position: static;
+
+  .navbar-inner {
+    height: 42px;
+    background-color: #000000 !important;
+    @include filter-gradient(black, #222, horizontal);
+    @include background-image(linear-gradient(color-stops(black, #222)));
+    .container {
+      position: relative;
+    }
+  }
+}
+
+
+.logo-glow {
+  width: 450px;
+  height: 42px;
+  position: absolute;
+  top: 0;
+  left: -100px;
+  z-index: 10;
+}
+
+.logo-glow.regular {
+  z-index: 10;
+  @include filter-gradient(#7d7e7d, #000000, horizontal); // IE6-9 fallback on horizontal gradient
+  @include background-image(radial-gradient(50% 100%, ellipse farthest-side, rgba(110, 110, 110, 0.9) 0%, rgba(110, 110, 110, 0.0) 90%));
+}
+.logo-glow.blue {
+  z-index: 20;
+  opacity: 0;
+  @include filter-gradient(#00fff6, #000000, horizontal); // IE6-9 fallback on horizontal gradient
+  @include background-image(radial-gradient(50% 100%, ellipse farthest-side, rgba(0, 255, 255, 0.9) 0%, rgba(0, 104, 227, 0.6) 50%, rgba(0, 104, 227, 0.0) 90%));
+  @include transition-property(opacity);
+  @include transition-duration(1s);
+  @include transition-timing-function(ease);
+}
+
+#logo,
+#logo a {
+  width: 258px;
+  height: 42px;
+  float: left;
+  display: block;
+  position: relative;
+  z-index: 30;
+}
+#logo a {
+  background: image-url("navbar-logo.png") 0 0 no-repeat;
+}
+#logo a:hover {
+  background: image-url("navbar-logo.png") 0 -5 no-repeat;
 }

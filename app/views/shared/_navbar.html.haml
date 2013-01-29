@@ -5,7 +5,10 @@
         %span.icon-bar
         %span.icon-bar
         %span.icon-bar
-      %a.brand{:href => "#"} HackerTracker
+      #logo
+        %a{:href => "javascript:void(0);", :class => "closed"}
+      .logo-glow.regular
+      .logo-glow.blue
       .nav-collapse
         %ul.nav.pull-right
           - unless user_signed_in?
